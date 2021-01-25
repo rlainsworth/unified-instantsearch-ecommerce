@@ -21,7 +21,7 @@ export const HeaderSearchBox = connectSearchBox(function SearchBox(props) {
       <div className="uni-SearchBox">
         <PredictiveSearchBox
           translations={{
-            placeholder: 'Search for a product, brand, color, …',
+            placeholder: 'Search for a neighbor, interest...',
           }}
           {...props}
           suggestionsIndex={config.suggestionsIndex}
@@ -33,7 +33,7 @@ export const HeaderSearchBox = connectSearchBox(function SearchBox(props) {
   return (
     <div className="uni-SearchBox">
       <SearchBoxComponent
-        translations={{ placeholder: 'Search for a product, brand, color, …' }}
+        translations={{ placeholder: 'Discover new neighbors locally...' }}
         {...props}
         onChange={(event) => {
           props.refine(event.currentTarget.value);

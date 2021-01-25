@@ -4,6 +4,7 @@ import { Highlight, Snippet } from 'react-instantsearch-dom';
 import './Hit.scss';
 
 export function Hit({ hit, insights, view }) {
+  console.log('hits',hit);
   return (
     <article
       className="uni-Hit"
@@ -20,11 +21,12 @@ export function Hit({ hit, insights, view }) {
 
         <div className="uni-Hit-Body">
           <header className="uni-Hit-header">
-            <h2 className="uni-Hit-category">{hit.categories[0]}</h2>
-
             <h1 className="uni-Hit-title">
               <Highlight attribute="name" tagName="mark" hit={hit} />
+             
             </h1>
+            <h2 className="uni-Hit-category">{hit.categories[0]}</h2>
+            <h2 className="uni-Hit-servicesoffered">{hit.servicesOffered}</h2>
           </header>
 
           {view === 'list' && (
@@ -34,12 +36,12 @@ export function Hit({ hit, insights, view }) {
           )}
 
           <footer>
-            <span className="uni-Hit-currency">$</span>
-            <span className="uni-Hit-price">{hit.price.toLocaleString()}</span>
+            {/* <span className="uni-Hit-currency">$</span>
+            <span className="uni-Hit-price">{hit.price.toLocaleString()}</span> */}
           </footer>
         </div>
 
-        <div className="uni-Hit-Actions">
+        {/* <div className="uni-Hit-Actions">
           <button
             title="Add to cart"
             className="uni-Hit-ActionButton"
@@ -54,7 +56,7 @@ export function Hit({ hit, insights, view }) {
           >
             <CartIcon />
           </button>
-        </div>
+        </div> */}
       </a>
     </article>
   );

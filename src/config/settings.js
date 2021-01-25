@@ -30,13 +30,13 @@ import { Hit } from './Hit';
 */
 
 export const inputContainer = '#search-button';
-export const inputContent = 'Search for products';
-export const keyboardShortcuts = ['/'];
-export const appId = 'latency';
-export const searchApiKey = '6be0576ff61c053d5f9a3225e2a90f76';
+export const inputContent = 'Start discovering...';
+//export const keyboardShortcuts = ['/'];
+export const appId = 'KLPP6ZGPE7';
+export const searchApiKey = '70d41d3f13d21f03cb1086447211b011';
 export const hitComponent = Hit;
 export const index = {
-  indexName: 'instant_search',
+  indexName: 'unified_instantsearch_your_data',
   searchParameters: {
     analytics: true,
     clickAnalytics: true,
@@ -78,12 +78,12 @@ export const setUserToken = (setToken) => {
 
 export const sorts = [
   {
-    label: 'Price ascending',
-    value: 'instant_search_price_asc',
+    label: 'Distance ascending',
+    value: 'instant_search_distance_asc',
   },
   {
-    label: 'Price descending',
-    value: 'instant_search_price_desc',
+    label: 'Distance descending',
+    value: 'instant_search_distance_desc',
   },
 ];
 
@@ -104,8 +104,8 @@ export const sorts = [
 export const refinements = [
   {
     type: 'hierarchical',
-    header: 'Categories',
-    label: 'Category',
+    header: 'Interests',
+    label: 'Interests',
     options: {
       attributes: [
         'hierarchicalCategories.lvl0',
@@ -117,11 +117,11 @@ export const refinements = [
   },
   {
     type: 'list',
-    header: 'Brands',
-    label: 'Brand',
+    header: 'Local helpers',
+    label: 'Helpers',
     options: {
-      attribute: 'brand',
-      searchable: true,
+      attribute: 'servicesOffered',
+      //searchable: true,
       showMore: true,
       limit: 6,
       showMoreLimit: 20,
@@ -133,19 +133,21 @@ export const refinements = [
   },
   {
     type: 'slider',
-    header: 'Price',
-    label: 'Price',
+    header: 'Age',
+    label: 'Age',
     options: {
-      attribute: 'price',
+      attribute: 'ageRange',
       transformValue: (value) => (
         <>
-          <span className="uni-Hit-currency">$</span>
+          <span className="uni-Hit-age"></span>
           {value}
         </>
       ),
     },
   },
 ];
+
+//console.log('refinements',refinements);
 
 /*
 |-------------------------------------------------------------------------------
@@ -163,12 +165,12 @@ export const refinements = [
 |
 */
 
-export const suggestionsIndex = {
-  indexName: 'instant_search_demo_query_suggestions',
-  searchParameters: {
-    hitsPerPage: 6,
-  },
-};
+// export const suggestionsIndex = {
+//   indexName: 'instant_search_demo_query_suggestions',
+//   searchParameters: {
+//     hitsPerPage: 6,
+//   },
+// };
 
 /*
 |-------------------------------------------------------------------------------
